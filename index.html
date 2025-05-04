@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Смирнов Артём Владимирович — Технический специалист</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0a84ff;
+      --primary-dark: #0066cc;
+      --secondary: #5e5ce6;
+      --light: #f5f5f7;
+      --dark: #1d1d1f;
+      --success: #32d74b;
+      --accent: #bf5af2;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px; /* Добавляем отступ сверху для якорных ссылок */
+    }
+    
+    body {
+        font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 60px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/api/placeholder/1200/400') center center;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      cursor: pointer; /* Добавляем указатель курсора */
+    }
+    
+    .nav-link:hover {
+      color: white;
+    }
+    
+    .hero {
+      text-align: center;
+      padding: 40px 0;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    
+    .tagline {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+    
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 24px;
+      background-color: transparent;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      cursor: pointer; /* Добавляем указатель курсора */
+    }
+    
+    .btn-primary {
+      background-color: white;
+      color: var(--primary);
+      border: none;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-primary:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .btn i {
+      margin-right: 8px;
+    }
+    
+    .main {
+      padding: 60px 0;
+    }
+    
+    .section {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--primary-dark);
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary);
+      border-radius: 3px;
+    }
+    
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .skill {
+      background-color: rgba(10, 132, 255, 0.1);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    
+    .skill:hover {
+      background-color: rgba(10, 132, 255, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    .skill i {
+      margin-right: 8px;
+      font-size: 1rem;
+    }
+    
+    .experience-item {
+      margin-bottom: 30px;
+      position: relative;
+      padding-left: 30px;
+    }
+    
+    .experience-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--primary);
+    }
+    
+    .experience-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 26px;
+      width: 2px;
+      height: calc(100% - 6px);
+      background-color: rgba(37, 99, 235, 0.3);
+    }
+    
+    .experience-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--dark);
+    }
+    
+    .experience-details {
+      color: var(--secondary);
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    
+    .bookshelf {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .book {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      height: 200px;
+    }
+    
+    .book:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .book-cover {
+      height: 120px;
+      background-color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .book-info {
+      padding: 10px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .book-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .book-author {
+      font-size: 0.8rem;
+      color: var(--secondary);
+    }
+    
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .service-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-icon {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(37, 99, 235, 0.1);
+      color: var(--primary);
+      font-size: 2rem;
+    }
+    
+    .service-content {
+      padding: 20px;
+    }
+    
+    .service-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    
+    ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(37, 99, 235, 0.1);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    
+    .footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .footer-link {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s;
+      cursor: pointer; /* Добавляем указатель курсора */
+    }
+    
+    .footer-link:hover {
+      color: white;
+    }
+    
+    .copyright {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    
+    @media (max-width: 768px) {
+      .header {
+        padding: 40px 0 30px;
+      }
+      
+      .nav {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .section {
+        padding: 30px 20px;
+      }
+      
+      .buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .bookshelf {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+      
+      .services {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Шапка -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="logo">АС</a>
+        <div class="nav-links">
+          <a href="#about" class="nav-link">Обо мне</a>
+          <a href="#skills" class="nav-link">Навыки</a>
+          <a href="#experience" class="nav-link">Опыт</a>
+          <a href="#education" class="nav-link">Образование</a>
+          <a href="#services" class="nav-link">Услуги</a>
+          <a href="#contact" class="nav-link">Контакты</a>
+        </div>
+      </nav>
+      
+      <div class="hero">
+        <div style="width: 150px; height: 150px; background-color: #e2e8f0; border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center;">
+          <i class="fas fa-user fa-4x" style="color: #0a84ff;"></i>
+        </div>
+        <h1>Артём Смирнов</h1>
+        <div class="tagline">Технический специалист • Фриланс-разработчик • Решения для бизнеса</div>
+        <div class="buttons">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Связаться
+          </a>
+          <a href="#services" class="btn">
+            <i class="fas fa-code"></i> Мои услуги
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Основное содержимое -->
+  <main class="main">
+    <div class="container">
+      <!-- О себе -->
+      <section id="about" class="section">
+        <h2>Обо мне</h2>
+        <p>Я — технический специалист с глубокими знаниями в области информационных технологий и опытом работы в компании-резиденте <strong>Сколково</strong> в сфере роботизированных платформ.</p>
+        <p>Специализируюсь на разработке комплексных технических решений для бизнеса, автоматизации процессов и создании информационных систем. Моя цель — помогать компаниям повышать эффективность с помощью современных технологий.</p>
+        <p>Имею системный подход к решению задач, позволяющий находить оптимальные решения даже в самых сложных ситуациях. Сочетаю технические навыки с бизнес-мышлением для достижения максимальных результатов.</p>
+      </section>
+      
+      <!-- Навыки -->
+      <section id="skills" class="section">
+        <h2>Технические навыки</h2>
+        <div class="skills">
+          <div class="skill"><i class="fas fa-server"></i> Backend</div>
+          <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+          <div class="skill"><i class="fab fa-node-js"></i> Node.js</div>
+          <div class="skill"><i class="fab fa-python"></i> Python</div>
+          <div class="skill"><i class="fab fa-html5"></i> HTML/CSS</div>
+          <div class="skill"><i class="fas fa-database"></i> SQL</div>
+          <div class="skill"><i class="fab fa-git-alt"></i> Git</div>
+          <div class="skill"><i class="fas fa-users-cog"></i> CRM</div>
+          <div class="skill"><i class="fas fa-industry"></i> ERP</div>
+          <div class="skill"><i class="fab fa-telegram"></i> Telegram Bots</div>
+          <div class="skill"><i class="fas fa-plug"></i> API</div>
+          <div class="skill"><i class="fas fa-link"></i> Webhook</div>
+          <div class="skill"><i class="fas fa-server"></i> Серверы</div>
+          <div class="skill"><i class="fas fa-sitemap"></i> Linux</div>
+          <div class="skill"><i class="fas fa-network-wired"></i> Сети</div>
+        </div>
+        
+        <h2 style="margin-top: 30px;">Инструменты</h2>
+        <div class="skills">
+          <div class="skill"><i class="far fa-clipboard"></i> Notion</div>
+          <div class="skill"><i class="far fa-sticky-note"></i> Miro</div>
+          <div class="skill"><i class="fas fa-tasks"></i> Jira</div>
+          <div class="skill"><i class="fab fa-figma"></i> Figma</div>
+          <div class="skill"><i class="fab fa-github"></i> GitHub</div>
+        </div>
+      </section>
+      
+      <!-- Образование -->
+      <section id="education" class="section">
+        <h2>Образование</h2>
+        <div class="experience-item">
+          <div class="experience-title">Бакалавриат: Информационные системы и технологии</div>
+          <div class="experience-details">Продолжаю обучение по данному направлению</div>
+          <p>Углубленное изучение современных информационных технологий, программирования и проектирования систем.</p>
+        </div>
+        
+        <div class="experience-item">
+          <div class="experience-title">Самообразование</div>
+          <div class="experience-details">Непрерывное профессиональное развитие</div>
+          <p>Регулярно прохожу курсы и тренинги для повышения квалификации в сфере IT и бизнес-анализа.</p>
+        </div>
+      </section>
+      
+      <!-- Опыт работы -->
+      <section id="experience" class="section">
+        <h2>Опыт работы</h2>
+        <div class="experience-item">
+          <div class="experience-title">Разработка веб-приложений</div>
+          <p>Создание многостраничных сайтов с авторизацией, личным кабинетом и панелью администратора. Разработка интерактивных интерфейсов и систем управления контентом.</p>
+        </div>
+        
+        <div class="experience-item">
+          <div class="experience-title">CRM/ERP решения</div>
+          <p>Проектирование и внедрение систем для автоматизации бизнес-процессов, управления взаимоотношениями с клиентами и планирования ресурсов предприятия для малого и среднего бизнеса.</p>
+        </div>
+        
+        <div class="experience-item">
+          <div class="experience-title">Telegram-боты</div>
+          <p>Разработка функциональных чат-ботов и Telegram Apps для автоматизации коммуникации с клиентами, информирования и обслуживания.</p>
+        </div>
+        
+        <div class="experience-item">
+          <div class="experience-title">API и интеграции</div>
+          <p>Создание и настройка API для обмена данными между различными системами. Разработка Webhook-решений для автоматизации процессов и интеграции с внешними сервисами.</p>
+        </div>
+        
+        <div class="experience-item">
+          <div class="experience-title">Серверная инфраструктура</div>
+          <p>Настройка и администрирование серверов, развертывание приложений, обеспечение бесперебойной работы и безопасности информационных систем.</p>
+        </div>
+      </section>
+      
+      <!-- Бизнес-компетенции -->
+      <section class="section">
+        <h2>Бизнес-компетенции</h2>
+        <p>Обладаю комплексным пониманием бизнес-процессов, благодаря изучению ключевых книг, входящих в обязательную программу MBA Кембриджа:</p>
+        
+        <div class="bookshelf">
+          <div class="book">
+            <div class="book-cover">
+              <i class="fas fa-book fa-2x"></i>
+            </div>
+            <div class="book-info">
+              <div>
+                <div class="book-title">От нуля к единице</div>
+                <div class="book-author">Питер Тиль</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="book">
+            <div class="book-cover">
+              <i class="fas fa-book fa-2x"></i>
+            </div>
+            <div class="book-info">
+              <div>
+                <div class="book-title">Бизнес с нуля</div>
+                <div class="book-author">Эрик Рис</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="book">
+            <div class="book-cover">
+              <i class="fas fa-book fa-2x"></i>
+            </div>
+            <div class="book-info">
+              <div>
+                <div class="book-title">Цель</div>
+                <div class="book-author">Элияху Голдратт</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="book">
+            <div class="book-cover">
+              <i class="fas fa-book fa-2x"></i>
+            </div>
+            <div class="book-info">
+              <div>
+                <div class="book-title">22 закона маркетинга</div>
+                <div class="book-author">Траут и Райс</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="book">
+            <div class="book-cover">
+              <i class="fas fa-book fa-2x"></i>
+            </div>
+            <div class="book-info">
+              <div>
+                <div class="book-title">Системное мышление</div>
+                <div class="book-author">Донелла Медоуз</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="book">
+            <div class="book-cover">
+              <i class="fas fa-book fa-2x"></i>
+            </div>
+            <div class="book-info">
+              <div>
+                <div class="book-title">Никаких компромиссов</div>
+                <div class="book-author">Крис Восс</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <p style="margin-top: 20px;">Это дало мне прочную базу понимания бизнес-процессов, что позволяет эффективно выявлять потребности клиентов и предлагать оптимальные технические решения для их бизнеса.</p>
+      </section>
+      
+      <!-- Услуги -->
+      <section id="services" class="section">
+        <h2>Мои услуги</h2>
+        <div class="services">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Веб-разработка</h3>
+              <p>Создание современных, адаптивных веб-сайтов и приложений с учетом потребностей вашего бизнеса.</p>
+            </div>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Telegram-боты</h3>
+              <p>Разработка функциональных ботов для автоматизации коммуникации с клиентами и оптимизации бизнес-процессов.</p>
+            </div>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Автоматизация</h3>
+              <p>Внедрение CRM/ERP систем для оптимизации работы компании и повышения эффективности.</p>
+            </div>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-plug"></i>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">API и интеграции</h3>
+              <p>Создание API и настройка интеграций между различными системами и сервисами.</p>
+            </div>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Серверы и инфраструктура</h3>
+              <p>Настройка и администрирование серверов, обеспечение безопасности и надежности работы.</p>
+            </div>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Технические консультации</h3>
+              <p>Подбор оптимальных технических решений для задач вашего бизнеса, аудит существующих систем.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Контакты -->
+      <section id="contact" class="section">
+        <h2>Связаться со мной</h2>
+        <p>Открыт к фриланс-проектам любой сложности, где могу применить как технические, так и стратегические знания. Свяжитесь со мной, чтобы обсудить ваш проект!</p>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <strong>Местоположение</strong>
+              <p>Россия</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fab fa-telegram"></i>
+            </div>
+            <div>
+              <strong>Telegram</strong>
+              <p><a href="https://t.me/terepse" target="_blank">@terepse</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Готовность к сотрудничеству -->
+      <section class="section">
+        <h2>Готов к сотрудничеству</h2>
+        <p>Я предлагаю гибкие условия сотрудничества для реализации ваших идей и проектов. Имею опыт работы как с краткосрочными задачами, так и с долгосрочными комплексными проектами.</p>
+        <p>Мой подход — глубокое погружение в задачу клиента, четкое планирование работы и регулярные отчеты о прогрессе. Я стремлюсь не просто выполнить техническую задачу, но и предложить решения, которые принесут реальную пользу вашему бизнесу.</p>
+        <p>Напишите мне в Telegram — обсудим ваш проект!</p>
+        
+        <div class="buttons" style="justify-content: flex-start;">
+          <a href="https://t.me/terepse" target="_blank" class="btn btn-primary">
+            <i class="fab fa-telegram"></i> Написать в Telegram
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
