@@ -1,0 +1,354 @@
+/* =============== Header =============== */
+.header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 60px 0 40px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 60px;
+  }
+  
+  .header-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* =============== Hero Section =============== */
+  .hero {
+    text-align: center;
+    padding: 40px 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+/* =============== Hero Typography =============== */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
+
+  /* =============== Avatar =============== */
+  .avatar-container {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    background: var(--light);
+    position: relative;
+  }
+  
+  .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .avatar:hover {
+    transform: scale(1.05) rotate(-5deg);
+  }
+  
+  /* Адаптивность для мобильных */
+  @media (max-width: 480px) {
+    .avatar-container {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
+/* =============== Navigation =============== */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    color: white;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* =============== Buttons =============== */
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background-color: white;
+    color: var(--primary);
+    border: none;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .btn i {
+    margin-right: 8px;
+  }
+  
+  /* =============== Cards =============== */
+  .service-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-icon {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+    font-size: 2rem;
+  }
+  
+  .service-content {
+    padding: 20px;
+  }
+  
+  .service-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--dark);
+  }
+  
+  /* =============== Book Cards =============== */
+  .book {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+  }
+  
+  .book:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-cover {
+    height: 120px;
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .book-info {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .book-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .book-author {
+    font-size: 0.8rem;
+    color: var(--secondary);
+  }
+  
+  /* =============== Contact Components =============== */
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+  
+  /* =============== Footer =============== */
+  .footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+  
+  .footer-link:hover {
+    color: white;
+  }
+  
+  .copyright {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+  
+  .course-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  }
+  
+  .course-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .course-header i {
+    font-size: 1.5rem;
+  }
+  
+  /* Специфичные цвета логотипов платформ */
+  .skillbox-icon {
+    color: #5c6bc0;
+  }
+  
+  .stepik-icon {
+    color: #00bfa5;
+  }
+  
+  .coursera-icon {
+    color: #2a73cc;
+  }
+  
+  .yandex-icon {
+    color: #ff0000;
+  }
+
+  .udemy-icon {
+    color: #a435f0;
+  }
+  
+  .hexlet-icon {
+    color: #1c7cd6;
+  }  
+  
+  .course-card h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 600;
+    color: var(--dark);
+  }
+  
+  .course-card ul {
+    padding-left: 18px;
+    list-style: disc;
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
